@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>NEWS</title>
+</head>
+
+<body style="background-color: #242f3f;">
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
+
+    <script src="./scripts.js"></script>
+
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light " style="background-color: #bc1212 ;">
+        <a class="navbar-brand" style="color:white" href="#">BBC NEWS PORTAL</a>
+        <button class="navbar-toggler" style="color:white" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="color:white"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" style="color:white ;" href="index.html">Home <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  
+                    <a class="nav-link" id="btn" style="color:white"  href="#"> Add News
+                        <svg  style="color: white;   align-self:center;" width="1em" height="1em"
+                            viewBox="0 0 16 16" class="bi bi-plus-circle-fill" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                        </svg>
+                    </a>
+                
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color:white" href="#"></a>
+                </li>
+
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a id="length" class="nav-link disabled" style="color:white" href="#"></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="loader-wrapper" id="loader" style="display:flex;">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
+    <div class="container" id="container" style="margin-top:70px ; display:none; ">
+        <div class="card-columns " id="card-columns">
+
+            <div class="card" id="card-0">
+                <img id="img-0" class="card-img-top" src="" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title" id="title-0">Card title</h5>
+                    <p class="card-text" id="description-0">Description...</p>
+                    <a href="#" id="linkToBBC-0" class="card-link">Link to original</a>
+                    <a href="#" id="-0" onclick="remove(this.id)"
+                        style="margin-top: 10px ;margin: 30px; color: #bc1212;" class="card-link">Remove</a>
+                    <a href="#" id="0" data-toggle="modal" data-target="#myModal" onclick="edit(this.id)">Edit</a>
+                </div>
+            </div>
+
+            <div class="card" id="card-1">
+                <img id="img-1" class="card-img-top" src="" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title" id="title-1">Card title</h5>
+                    <p class="card-text" id="description-1">Description...</p>
+                    <a href="#" id="linkToBBC-1" class="card-link">Link to original</a>
+                    <a href="#" id="-1" onclick="remove(this.id)"
+                        style="margin-top: 10px ;margin: 30px; color: #bc1212;" class="card-link">Remove</a>
+                    <a href="#" id="1" data-toggle="modal" data-target="#myModal" onclick="edit(this.id)">Edit</a>
+                </div>
+            </div>
+
+            <div class="card" id="card-2">
+                <img id="img-2" class="card-img-top" src="" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title" id="title-2">Card title</h5>
+                    <p class="card-text" id="description-2">Description...</p>
+                    <a href="#" id="linkToBBC-2" class="card-link">Link to original</a>
+                    <a href="#" id="-2" onclick="remove(this.id)"
+                        style="margin-top: 10px ;margin: 30px; color: #bc1212;" class="card-link">Remove</a>
+                    <a href="#" id="2" data-toggle="modal" data-target="#myModal" onclick="edit(this.id)">Edit</a>
+                </div>
+            </div>
+
+            <div class="card" id="card-3">
+                <img id="img-3" class="card-img-top" src="" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title" id="title-3">Card title</h5>
+                    <p class="card-text" id="description-3">Description...</p>
+                    <a href="#" id="linkToBBC-3" class="card-link">Link to original</a>
+                    <a href="#" id="-3" onclick="remove(this.id)"
+                        style="margin-top: 10px ;margin: 30px; color: #bc1212;" class="card-link">Remove</a>
+                    <a href="#" id="3" data-toggle="modal" data-target="#myModal" onclick="edit(this.id)">Edit</a>
+                </div>
+            </div>
+
+            <div class="card" id="card-4">
+                <img id="img-4" class="card-img-top" src="" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title" id="title-4">Card title</h5>
+                    <p class="card-text" id="description-4">Description...</p>
+                    <a href="#" id="linkToBBC-4" class="card-link">Link to original</a>
+                    <a href="#" id="-4" onclick="remove(this.id)"
+                        style="margin-top: 10px ;margin: 30px; color: #bc1212;" class="card-link">Remove</a>
+                    <a href="#" id="4" data-toggle="modal" data-target="#myModal" onclick="edit(this.id)">Edit</a>
+                </div>
+            </div>
+
+            <div class="card" id="card-5">
+                <img id="img-5" class="card-img-top" src="" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title" id="title-5">Card title</h5>
+                    <p class="card-text" id="description-5">Description...</p>
+                    <a href="#" id="linkToBBC-5" class="card-link">Link to original</a>
+                    <a href="#" id="-5" onclick="remove(this.id)"
+                        style="margin-top: 10px ;margin: 30px; color: #bc1212;" class="card-link">Remove</a>
+                    <a href="#" id="5" data-toggle="modal" data-target="#myModal" onclick="edit(this.id)">Edit</a>
+                </div>
+            </div>
+
+            <div class="card" id="card-6">
+                <img id="img-6" class="card-img-top" src="" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title" id="title-6">Card title</h5>
+                    <p class="card-text" id="description-6">Description...</p>
+                    <a href="#" id="linkToBBC-6" class="card-link">Link to original</a>
+                    <a href="#" id="-6" onclick="remove(this.id)"
+                        style="margin-top: 10px ;margin: 30px; color: #bc1212;" class="card-link">Remove</a>
+                    <a href="#" id="6" data-toggle="modal" data-target="#myModal" onclick="edit(this.id)">Edit</a>
+                </div>
+            </div>
+
+            <div class="card" id="card-7">
+                <img id="img-7" class="card-img-top" src="" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title" id="title-7">Card title</h5>
+                    <p class="card-text" id="description-7">Description...</p>
+                    <a href="#" id="linkToBBC-7" class="card-link">Link to original</a>
+                    <a href="#" id="-7" onclick="remove(this.id)"
+                        style="margin-top: 10px ;margin: 30px; color: #bc1212;" class="card-link">Remove</a>
+                    <a href="#" id="7" data-toggle="modal" data-target="#myModal" onclick="edit(this.id)">Edit</a>
+                </div>
+            </div>
+            <div class="card" id="card-8">
+                <img id="img-8" class="card-img-top" src="" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title" id="title-8">Card title</h5>
+                    <p class="card-text" id="description-8">Description...</p>
+                    <a href="#" id="linkToBBC-8" class="card-link">Link to original</a>
+                    <a href="#" id="-8" onclick="remove(this.id)"
+                        style="margin-top: 10px ;margin: 30px; color: #bc1212;" class="card-link">Remove</a>
+                    <a href="#" id="8" data-toggle="modal" data-target="#myModal" onclick="edit(this.id)">Edit</a>
+                </div>
+            </div>
+
+            <div class="card" id="card-9">
+                <img id="img-9" class="card-img-top" src="" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title" id="title-9">Card title</h5>
+                    <p class="card-text" id="description-9">Description...</p>
+                    <a href="#" id="linkToBBC-9" class="card-link">Link to original</a>
+                    <a href="#" id="-9" onclick="remove(this.id)"
+                        style="margin-top: 10px ;margin: 30px; color: #bc1212;" class="card-link">Remove</a>
+                    <a href="#" id="9" data-toggle="modal" data-target="#myModal" onclick="edit(this.id)">Edit</a>
+                </div>
+            </div>
+
+            <div class="cardAdd" id="cardAdd">
+                <div class="card-img-top" class="card-body" style=" background-color: #242f3f; align-self:center; ">
+                    <svg id="btn" style="color: white; padding:40px;  align-self:center;" width="10em" height="10em"
+                        viewBox="0 0 16 16" class="bi bi-plus-circle-fill" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                    </svg>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="modal" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="loader-wrapper" id="loader2" style="display:flex;">
+                    <span class="loader"><span class="loader-inner"></span></span>
+                </div>
+                
+                <div class="card" id="modal-card" style="display:none;">
+                    <img id="modal-img" class="card-img-top" src="" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title" id="modal-title">Card title</h5>
+                        <textarea id="modal-description" class="form-control" rows="5">Loading...</textarea>
+                    </div>
+                </div>
+
+                <div id="close" class="modal-footer">
+
+                    <button onclick="closeBtn()" type="button" id="btn-close" class="btn btn-secondary"
+                        data-dismiss="modal">Close</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
+
+<style>
+    .loader-wrapper {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #242f3f;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .loader {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        /******** <- Remove this line *********/
+        border: 4px solid #Fff;
+        animation: loader 2s infinite ease;
+    }
+
+    .loader-inner {
+        vertical-align: top;
+        display: inline-block;
+        width: 100%;
+        background-color: #fff;
+        animation: loader-inner 2s infinite ease-in;
+    }
+
+    @keyframes loader {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        25% {
+            transform: rotate(180deg);
+        }
+
+        50% {
+            transform: rotate(180deg);
+        }
+
+        75% {
+            transform: rotate(360deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes loader-inner {
+        0% {
+            height: 0%;
+        }
+
+        25% {
+            height: 0%;
+        }
+
+        50% {
+            height: 100%;
+        }
+
+        75% {
+            height: 100%;
+        }
+
+        100% {
+            height: 0%;
+        }
+    }
+</style>
